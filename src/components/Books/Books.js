@@ -34,10 +34,13 @@ function Books(props) {
 				.catch(function (er) {
 					setError(er);
 					setIsLoading(false);
-					if (er.response.status === 401) {
-						setErrorMsg("Please sign in to see this information");
-						redirectSignIn(props);
+					if (er.response) {
+						if (er.response.status === 401) {
+							setErrorMsg("Please sign in to see this information");
+							redirectSignIn(props);
+						}
 					}
+					console.log(er);
 				});
 		};
 		fetchData();
