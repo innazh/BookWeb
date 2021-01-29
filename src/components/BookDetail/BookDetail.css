@@ -1,0 +1,5 @@
+form label {
+	/* font-style: bold; */
+	font-weight: bold;
+}
+textarea { height: auto; }
